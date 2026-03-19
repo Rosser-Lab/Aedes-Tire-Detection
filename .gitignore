@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.pth
+*.pth.tar
+outputs/
+results/
+*.tif
+*.gpkg
+*.shp
+*.dbf
+*.shx
+*.prj
+.ipynb_checkpoints/
+dataset_analysis_cache/
+*.pkl
+*.log

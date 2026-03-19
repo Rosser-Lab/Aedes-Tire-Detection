@@ -1,0 +1,24 @@
+# Core spatial analysis dependencies
+rasterio>=1.3.0
+geopandas>=0.12.0
+numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Spatial statistics
+libpysal>=4.6.0
+esda>=2.4.0
+
+# Visualization and mapping
+matplotlib-scalebar>=0.7.1
+contextily>=1.2.0
+
+# Optional: Memory monitoring (for Windows compatibility)
+psutil>=5.8.0
+
+# Additional utilities
+shapely>=1.8.0
+safetensors>=0.3.0

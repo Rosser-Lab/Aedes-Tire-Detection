@@ -1,0 +1,12 @@
+{
+    "model_weights_path": "path/to/your/trained_model.pth",
+    "model_definition": "UnetPlusPlus(encoder_name=\"efficientnet-b4\", in_channels=3, classes=1, encoder_weights=\"imagenet\")",
+    "image_path": "path/to/your/orthomosaic.tif",
+    "output_dir": "path/to/your/output_directory",
+    "ground_truth_path": "path/to/your/ground_truth_mask.tif",
+    "tile_size": 256,
+    "batch_size": 16,
+    "val_threshold": 0.99,
+    "min_object_size": 100,
+    "process_percentage": 100.0
+}
