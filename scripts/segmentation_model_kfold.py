@@ -511,27 +511,13 @@ def get_transforms(config):
 def calculate_metrics(y_true, y_pred):
     y_true = y_true.astype(int)
     y_pred = y_pred.astype(int)
-    
-    # Handle cases where only one class is present
-    if len(np.unique(y_true)) == 1:
-        accuracy = accuracy_score(y_true, y_pred)
-        if y_true[0] == 1:  # All positive
-            precision = accuracy
-            recall = 1.0
-            f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-            mcc = 0  # MCC is undefined when there's only one class
-        else:  # All negative
-            precision = 1.0
-            recall = accuracy
-            f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-            mcc = 0
-    else:
-        accuracy = accuracy_score(y_true, y_pred)
-        precision = precision_score(y_true, y_pred, zero_division=0)
-        recall = recall_score(y_true, y_pred, zero_division=0)
-        f1 = f1_score(y_true, y_pred, zero_division=0)
-        mcc = matthews_corrcoef(y_true, y_pred)
-    
+
+    accuracy = accuracy_score(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, zero_division=0)
+    recall = recall_score(y_true, y_pred, zero_division=0)
+    f1 = f1_score(y_true, y_pred, zero_division=0)
+    mcc = matthews_corrcoef(y_true, y_pred) if len(np.unique(y_true)) > 1 else 0
+
     return accuracy, precision, recall, f1, mcc
 
 def evaluate_model(model, val_loader, criterion, config, pbar=None):
@@ -577,16 +563,16 @@ def evaluate_model(model, val_loader, criterion, config, pbar=None):
         val_loss /= total_samples
         
         # Calculate metrics from confusion matrix
-        tn, fp, fn, tp = confusion_mat.ravel()
-        
+        tn, fp, fn, tp = [float(x) for x in confusion_mat.ravel()]
+
         # Calculate metrics
         total = tn + fp + fn + tp
         accuracy = (tp + tn) / total
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0
         f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-        
-        # MCC calculation
+
+        # MCC calculation — use split sqrt to avoid overflow on large pixel counts
         mcc_num = tp * tn - fp * fn
         mcc_den = np.sqrt(tp + fp) * np.sqrt(tp + fn) * np.sqrt(tn + fp) * np.sqrt(tn + fn)
         mcc = mcc_num / mcc_den if mcc_den > 0 else 0
