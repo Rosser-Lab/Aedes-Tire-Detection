@@ -27,26 +27,12 @@ configs/
 
 ## Requirements
 
-Two separate environments are needed — one for model training/prediction and one for spatial analysis.
-
-### Training and prediction
-
 ```bash
 conda env create -f environment.yml
 conda activate drone_dengue
 ```
 
-Or with pip:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Spatial analysis
-
-```bash
-pip install -r requirements_spatial_analysis.txt
-```
+The conda environment includes dependencies for both model training/prediction and spatial analysis. `requirements.txt` and `requirements_spatial_analysis.txt` are provided as pip-installable references for each component.
 
 ## Usage
 

@@ -78,9 +78,9 @@ if args.clear_cache:
     clear_cache()
 
 # File paths - update these to your file locations
-original_tires_path = "C:/Users/achamb/Documents/GitHub/drone_dengue/data/idn/tires/spatial_analysis/tires_534_points.shp"
-refined_tires_path = "C:/Users/achamb/Documents/GitHub/drone_dengue/data/idn/tires/spatial_analysis/tires_1300_points.shp"
-orthomosaic_path = "C:/Users/achamb/Documents/GitHub/drone_dengue/data/idn/tires/spatial_analysis/Makassar_Tallo_DroneMap_June2024.tif"
+original_tires_path = "path/to/your/tires_ground_truth_points.shp"
+refined_tires_path = "path/to/your/tires_predicted_points.shp"
+orthomosaic_path = "path/to/your/orthomosaic.tif"
 
 # Output directory
 output_dir = "spatial_analysis_results"

@@ -44,7 +44,7 @@ calculated_class_weight = 20.0  # Default fallback value
 class Config:
     def __init__(self, config_file=None):
         # Set basic parameters first (these can be overridden by JSON)
-        self.base_path = '/scratch/groups/jrosser/drone_dengue'  # Use jrosser scratch for performance
+        self.base_path = '/path/to/your/data'  # Root directory containing image and mask files
         self.image_suffix = '_image.tif'
         self.mask_suffix = '_mask_tires.tif'
         self.tile_size = 256
