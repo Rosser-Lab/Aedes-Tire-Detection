@@ -2,7 +2,7 @@
 
 Code for the manuscript:
 
-> Hassan MM\*, Chamberlin AJ\*, Tarpenning MS, Weber WC, Dave Coombe K, De Leo GA, Junaid M, Soma AS, Ansariadi, Rosser JI. **Enhancing *Aedes aegypti* breeding site detection: A deep learning approach to tire identification in unmanned aerial vehicle imagery from urban Indonesia.** *Journal name*, in press. (\*Co-first authors)
+> Hassan MM\*, Chamberlin AJ\*, Tarpenning MS, Weber WC, Dave Coombe K, De Leo GA, Junaid M, Soma AS, Ansariadi, Rosser JI. **Enhancing *Aedes aegypti* breeding site detection: A deep learning approach to tire identification in unmanned aerial vehicle imagery from urban Indonesia.** *Remote Sensing Applications: Society and Environment*, in press. (\*Co-first authors)
 
 ## Overview
 
